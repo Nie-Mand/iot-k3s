@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  node-1:
+    build: ./pidoc
+    ports: 
+      - "2222:2222"
+      - "6443:6443"
+
+  node-2:
+    build: ./pidoc
+    ports: 
+      - "2223:2222"
+      # - "6444:6443"

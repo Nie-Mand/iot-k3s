@@ -1,0 +1,10 @@
+apiVersion: k3d.io/v1alpha5
+kind: Simple
+metadata:
+  name: iot-k3s
+servers: 1
+agents: 2
+ports:
+  - port: 8008:8008
+    nodeFilters:
+      - loadbalancer
