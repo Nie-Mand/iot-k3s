@@ -1,6 +1,22 @@
+# IoT Lab: K3s Lab
+
+This lab is designed to be used with the [K3s](https://k3s.io/) distribution of Kubernetes. K3s is a lightweight, CNCF-certified Kubernetes distribution that is optimized for IoT and edge computing. It is a fully compliant Kubernetes distribution with the following enhancements:
+
+## Note
+For the simplicity of this lab, we will be using [K3d]](https://k3d.io/) instead of K3s. K3d is a lightweight wrapper to run K3s (Rancher Lab's minimal Kubernetes distribution) in docker. It makes it very easy to create single- and multi-node k3s clusters in docker, e.g. for local development on Kubernetes-aware applications.
+
+
+## Presented by:
+- Mohamed Sofiene Barka
+- Adam Lahbib
+- Nour Elhouda Mami
+
+## Github Repository
+- [https://github.com/Nie-Mand/iot-k3s](https://github.com/Nie-Mand/iot-k3s)
+
 
 # Setup 2 raspberry pi's VMs
-- We have used a custom docker image to run the raspberry pi nodes each in a docker container. In the end of the process and while installing k3s, we have encountered some issues with the system modules like br_netfilter and overlay... We have switched to `k3d` to run k3s in docker containers in a much easier way. The custom image is in [this folder](./k3s-attempt). 
+- We have used a custom docker image to run the raspberry pi nodes each in a docker container. In the end of the process and while installing k3s, we have encountered some issues with the system modules like br_netfilter and overlay... We have switched to `k3d` to run k3s in docker containers in a much easier way. The custom image is in [this folder](https://github.com/Nie-Mand/iot-k3s/tree/main/k3s-attempt). 
 - `getconf LONG_BIT` will return the architecture of the system. In our case, it is 32 bits.
 
 
@@ -82,4 +98,4 @@ The Command `kubectl get pods -A` will return all the pods in all namespaces. Th
 
 ![pod](./assets/flask-pod.png)
 
-- We can do it the YAML way by creating a YAML file with [this content](./manifest.yml)
+- We can do it the YAML way by creating a YAML file with [this content](https://github.com/Nie-Mand/iot-k3s/tree/main/manifest.yml)

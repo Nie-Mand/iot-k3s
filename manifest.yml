@@ -6,7 +6,7 @@ metadata:
   labels:
     app: flask-app-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: flask-app
@@ -25,7 +25,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: flask-app
+  name: flask-app-service
 spec:
   selector:
     app: flask-app-deployment
@@ -33,5 +33,5 @@ spec:
   - protocol: TCP
     port: 8008
     targetPort: 8008
-    nodePort: 30003
-  type: LoadBalancer
+    nodePort: 30080
+  type: NodePort

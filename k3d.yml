@@ -8,3 +8,4 @@ ports:
   - port: 8008:8008
     nodeFilters:
       - loadbalancer
+# k3d cluster create -p "8081:80@loadbalancer" --agents 2 --name iot-k3s
